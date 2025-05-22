@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Hari Besok</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+    input, button { padding: 10px; margin: 5px; }
+  </style>
+</head>
+<body>
+  <h2>HARI BESOK</h2>
+  <input type="text" id="inputHari" placeholder="Masukkan nama hari">
+  <button onclick="cariBesok()">Cek Besok</button>
+  <p id="hasil"></p>
+ <script>
+    function cariBesok() {
+      const hariInput = document.getElementById("inputHari").value.toLowerCase();
+      const hariList = ['senin', 'selasa', 'rabu', 'kamis', 'jumat', 'sabtu', 'minggu'];
+      
+      if (hariList.includes(hariInput)) {
+        const index = hariList.indexOf(hariInput);
+        const besok = hariList[(index + 1) % 7];
+        document.getElementById("hasil").textContent = `Besoknya ${besok}`;
+        console.log(`Input: ${hariInput}, Besoknya: ${besok}`);
+      } else {
+        document.getElementById("hasil").textContent = "Ini bukan nama hari yang valid.";
+        console.log("Input salah: bukan nama hari");
+      }
+    }
+  </script>
+</body>
+</html>
