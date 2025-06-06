@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>looping 20</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h3>PROGRAM LOOPING 20</h3>
+
+  <div>
+    <label for="nomor">Masukkan Jumlah Perkalian : </label>
+    <input type="text" id="jumlah">
+  </div>
+
+  <div>
+    <button id="btn-loop">Loop</button>
+  </div>
+  
+  <p>Hasil : <br><span id="hasil"></span></p>
+  
+  <scrip>
+    const BtnLoop = document.getElementById("btn-loop")
+
+BtnLoop.addEventListener("click", function(){
+  let n = parseInt(document.getElementById("jumlah").value);
+  let i = 1;
+  let tabelHTML = "<table>";
+
+  while (i <= n) {
+    let j = 1;
+    tabelHTML += "<tr>";
+    while (j <= n) {
+      tabelHTML += `<td>${i * j}</td>`;
+      j++;
+    }
+    tabelHTML += "</tr>";
+    i++;
+  }
+
+  tabelHTML += "</table>";
+  document.getElementById("hasil").innerHTML = tabelHTML;
+});
+  </scrip>
+</body>
+</html>

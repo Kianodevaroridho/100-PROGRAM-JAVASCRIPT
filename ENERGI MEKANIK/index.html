@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energi Mekanik</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        input {
+            padding: 10px;
+            width: 200px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Perhitungan Energi Mekanik</h1>
+    <input type="number" id="mass" placeholder="Masukkan massa (kg)">
+    <input type="number" id="height" placeholder="Masukkan ketinggian (m)">
+    <input type="number" id="velocity" placeholder="Masukkan kecepatan (m/s)">
+    <button onclick="calculateEnergy()">Hitung</button>
+
+    <p>Energi Potensial: <span id="potentialEnergy"></span> Joule</p>
+    <p>Energi Kinetik: <span id="kineticEnergy"></span> Joule</p>
+    <p>Energi Mekanik: <span id="mechanicalEnergy"></span> Joule</p>
+
+    <script>
+      function calculateEnergy() {
+    const mass = parseFloat(document.getElementById("mass").value);
+    const height = parseFloat(document.getElementById("height").value);
+    const velocity = parseFloat(document.getElementById("velocity").value);
+    const gravity = 10; // Nilai gravitasi (m/s²)
+
+    if (!mass || !height || !velocity) {
+        alert("Harap masukkan semua nilai dengan benar!");
+        return;
+    }
+
+    const potentialEnergy = mass * gravity * height;
+    const kineticEnergy = 0.5 * mass * velocity * velocity;
+    const mechanicalEnergy = potentialEnergy + kineticEnergy;
+
+    document.getElementById("potentialEnergy").textContent = potentialEnergy.toFixed(2);
+    document.getElementById("kineticEnergy").textContent = kineticEnergy.toFixed(2);
+    document.getElementById("mechanicalEnergy").textContent = mechanicalEnergy.toFixed(2);
+}
+    </script>
+</body>
+</html>

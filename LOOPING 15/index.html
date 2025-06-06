@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>looping 15</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h3>PROGRAM LOOPING 15</h3>
+
+  <div>
+    <button id="btn-loop">Loop</button>
+  </div>
+  
+  <p>Hasil : <br><span id="hasil"></span></p>
+  
+  <script>
+    const BtnLoop = document.getElementById("btn-loop")
+
+BtnLoop.addEventListener("click", function(){
+  let hasil = "";
+  
+  for (let i = 0; i < 5; i++) {
+  let spasi = "";
+  for (let s = 0; s < 5 - i - 1; s++) {
+    spasi += "&nbsp;";
+    }
+    
+  let bintang = "";
+  for (let b = 0; b < i + 1; b++) {
+    bintang += "*";
+  }
+    hasil += spasi + bintang + "<br>";
+  }
+  document.getElementById("hasil").innerHTML = hasil;
+});
+  </script>
+</body>
+</html>

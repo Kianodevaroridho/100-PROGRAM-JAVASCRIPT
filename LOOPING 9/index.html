@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>looping 9</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h3>PROGRAM LOOPING 9</h3>
+
+  <div>
+    <button id="btn-loop">Loop</button>
+  </div>
+  
+  <p>Hasil : <br><span id="hasil"></span></p>
+  
+  <script>
+    const BtnLoop = document.getElementById("btn-loop")
+
+BtnLoop.addEventListener("click", function(){
+  let hasil = "";
+  for (let i = 0; i < 5; i++) {
+    for (let j = 1; j <= 5; j++) {
+      hasil += j + " ";
+    }
+    hasil += "<br>";
+  }
+  document.getElementById("hasil").innerHTML = hasil;
+});
+  </script>
+</body>
+</html>

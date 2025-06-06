@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>faktorial</title>
+</head>
+<body>
+  <h3>PROGRAM FAKTORIAL</h3>
+
+<div>
+  <label for="input">Masukkan Angka : </label>
+  <input type="number" id="angka" min="0">
+</div>
+
+  <div>
+    <button id="btn-hitung">Hitung</button>
+  </div>
+  
+  <p>Hasil : <br><span id="hasil"></span></p>
+  
+  <script>
+    const BtnHitung = document.getElementById("btn-hitung")
+
+  BtnHitung.addEventListener("click", function(){
+   const n = parseInt(document.getElementById('angka').value);
+   if (isNaN(n) || n < 0) {
+   document.getElementById('hasil').textContent = 'Masukkan angka bulat positif atau nol.';
+   return;
+  }
+
+   let faktorial = 1;
+   for (let i = 1; i <= n; i++) {
+   faktorial *= i;
+  }
+
+   document.getElementById('hasil').textContent = `${n}! = ${faktorial}`;
+    
+});
+  </script>
+</body>
+</html>

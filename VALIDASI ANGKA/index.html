@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>validasi angka</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h3>PROGRAM VALIDASI ANGKA</h3>
+
+<div>
+  <label for="input">Masukkan Sesuatu : </label>
+  <input type="text" id="input">
+</div>
+
+  <div>
+    <button id="btn-periksa">Periksa</button>
+  </div>
+  
+  <p>Hasil : <br><span id="hasil"></span></p>
+  
+  <script>
+    const BtnPeriksa = document.getElementById("btn-periksa")
+
+BtnPeriksa.addEventListener("click", function(){
+  const input = document.getElementById('input').value;
+  if (input === '') {
+        document.getElementById('hasil').textContent = 'INPUT TIDAK BOLEH KOSONG.';
+        return;
+  }
+
+  const angka = Number(input);
+  if (isNaN(angka)) {
+    document.getElementById('hasil').textContent = 'INI BUKAN ANGKA.';
+    }
+  else {
+    let jenis = '';
+    if (Number.isInteger(angka)) {
+      if (angka > 0) {
+        jenis = 'BILANGAN BULAT POSITIF';
+      }
+      else if (angka < 0) {
+        jenis = 'BILANGAN BULAT NEGATIF';
+        }
+      else {
+        jenis = 'NOL';
+        }
+    }
+    else {
+      jenis = 'BILANGAN DESIMAL';
+      }
+
+  document.getElementById('hasil').textContent = `${angka} adalah ${jenis}.`;
+  }
+});
+  </script>
+</body>
+</html>

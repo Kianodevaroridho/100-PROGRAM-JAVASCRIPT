@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>looping 1</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h3>PROGRAM LOOPING 1</h3>
+  <div>
+    <label for="nomor">Masukkan Sebuah Kata : </label>
+    <input type="text" id="kata">
+  </div>
+
+  <div>
+    <button id="btn-loop">Loop</button>
+  </div>
+  
+  <p>Hasil : <br><span id="hasil"></span></p>
+  
+  <script>
+    const BtnLoop = document.getElementById("btn-loop")
+
+BtnLoop.addEventListener("click", function(){
+  const kata = document.getElementById('kata').value;
+  let hasil = "";
+
+  for (let i = 0; i < 4; i++) {
+    hasil += kata + " ";
+  }
+
+  document.getElementById("hasil").innerHTML = hasil;
+})
+  </script>
+</body>
+</html>

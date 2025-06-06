@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>membalikan data</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h3>PROGRAM MEMBALIK DATA</h3>
+  <div>
+    <label for="nomor">Masukkan Suatu Data : </label>
+    <input type="text" id="data">
+  </div>
+
+  <div>
+    <button id="btn-balik">Balik</button>
+  </div>
+  
+  <p>Hasil : <span id="hasil">-</span></p>
+  
+  <script>
+    const BtnBalik = document.getElementById("btn-balik")
+
+BtnBalik.addEventListener("click", function(){
+  const teks = document.getElementById('data').value;
+  const hasil = teks.split('').reverse().join('');
+  document.getElementById('hasil').textContent = hasil;
+})
+  </script>
+</body>
+</html>

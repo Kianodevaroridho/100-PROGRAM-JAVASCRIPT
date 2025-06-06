@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>km2</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h3>PROGRAM KONVERSI KM<sup>2</sup></h3>
+
+  <div>
+    <label for="input">Masukkan Luas Km<sup>2</sup> : </label>
+    <input type="number" id="km2">
+  </div>
+
+  <div>
+    <button id="btn-konversi">Konversi</button>
+  </div>
+  
+  <p>Hasil : <br><span id="hasil"></span></p>
+  
+  <script>
+    const BtnKonversi = document.getElementById("btn-konversi")
+
+BtnKonversi.addEventListener("click", function(){
+  const km2 = parseFloat(document.getElementById("km2").value);
+  const output = document.getElementById("hasil");
+
+  if (isNaN(km2)) {
+    output.textContent = "Masukkan angka yang valid!";
+    return;
+  }
+
+  const m2 = km2 * 1_000_000;
+  const ha = km2 * 100;
+  const ft2 = km2 * 10763910.4;
+  const acre = km2 * 247.105;
+
+  output.textContent = `${m2} Meter Persegi\n${ha} Hektar\n${ft2} Kaki Persegi\n${acre} Acre`;
+});
+  </script>
+</body>
+</html>

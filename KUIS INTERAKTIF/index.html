@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <title>Kuis Interaktif</title>
+</head>
+<body>
+    <h1>Siap untuk Kuis?</h1>
+    <p>Siapa Ketua PSSI?</p>
+    <button onclick="checkAnswer('Jakarta')">Pa Erick Thohir</button>
+    <button onclick="checkAnswer('Bandung')">Pa Endang</button>
+    <button onclick="checkAnswer('Surabaya')">Pa Didin</button>
+    <p id="result"></p>
+
+    <script>
+        function checkAnswer(answer) {
+            if (answer === "Pa Erick Thohir") {
+                document.getElementById("result").textContent = "Benar!";
+            } else {
+                document.getElementById("result").textContent = "Salah!";
+            }
+        }
+    </script>
+</body>
+</html>

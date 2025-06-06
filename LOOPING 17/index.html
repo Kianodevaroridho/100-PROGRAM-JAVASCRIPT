@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>looping 17</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h3>PROGRAM LOOPING 17</h3>
+
+  <div>
+    <button id="btn-loop">Loop</button>
+  </div>
+  
+  <p>Hasil : <br><span id="hasil"></span></p>
+  
+  <script>
+    const BtnLoop = document.getElementById("btn-loop")
+
+BtnLoop.addEventListener("click", function(){
+  let huruf = 'a';
+  let i = 0;
+  let hasil = '';
+
+  while (i < 5) {
+    let baris = '';
+    let j = 0;
+    while (j < 5) {
+      baris += huruf + ' ';
+      j++;
+    }
+  hasil += baris.trim() + '<br>';
+  huruf = String.fromCharCode(huruf.charCodeAt(0) + 1);
+  i++;
+}
+  document.getElementById("hasil").innerHTML = hasil;
+});
+  </script>
+</body>
+</html>
